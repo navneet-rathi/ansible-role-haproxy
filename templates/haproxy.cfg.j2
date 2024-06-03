@@ -52,5 +52,5 @@ backend {{ haproxy_backend_name }}
 {% endif %}
     cookie SERVERID insert indirect
 {% for backend in haproxy_backend_servers %}
-    server {{ backend.name }} {{ backend.address }}
+    server {{ backend.name }} {{ backend.address }} check
 {% endfor %}
